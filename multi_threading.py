@@ -1,0 +1,29 @@
+import threading
+
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+        print "init"
+    def run(self):
+        print "starting " + self.name
+        threadLock.acquire()
+        print "hello"
+        threadLock.release()
+
+threadLock = threading.Lock()
+threads = []
+
+thread1 = myThread(1, "Thread-1", 1)
+thread2 = myThread(2, "Thread-2", 2)
+
+thread1.start()
+thread2.start()
+
+threads.append(thread1)
+threads.append(thread2)
+for t in threads:
+    t.join()
+print "exiting"
