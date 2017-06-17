@@ -17,8 +17,8 @@ def gamepad():
                 BrickPi.MotorSpeed[PORT_B] = event.state / 128
                 BrickPi.MotorSpeed[PORT_C] = event.state / 128
             elif event.code == "ABS_RX":
-                BrickPi.MotorSpeed[PORT_A] = event.state / -1300
-                BrickPi.MotorSpeed[PORT_D] = event.state / 1300
+                BrickPi.MotorSpeed[PORT_A] = event.state / -260
+                BrickPi.MotorSpeed[PORT_D] = event.state / 260
             elif event.code == "BTN_MODE":
                 global quitting
                 quitting = True
