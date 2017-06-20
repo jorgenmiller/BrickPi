@@ -9,7 +9,7 @@ motorRotateDegree([255],[0],[PORT_A])
 def gamepad():
     while True:
         for event in get_gamepad():
-            elif event.code == "ABS_RX":
+            if event.code == "ABS_RX":
                 BmotorRotateDegree([255],[event.state / 90],[PORT_A])
             elif event.code == "BTN_MODE":
                 global quitting
