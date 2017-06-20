@@ -32,7 +32,7 @@ while True:
         BrickPi.MotorSpeed[PORT_A] = 50
         print "less"
     for pos_A in range(pos_gamepad - 10, pos_gamepad + 10):
-        BrickPi.MotorSpeed[PORT_A] = 0
+        BrickPi.MotorSpeed[PORT_A] = 255
         print "equal"
     BrickPiUpdateValues()
     if quitting == True:
