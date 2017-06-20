@@ -12,8 +12,7 @@ def gamepad():
     while True:
         for event in get_gamepad():
             if event.code == "ABS_RX":
-                print event.state / 90
-                motorRotateDegree([255],[event.state / 90],[PORT_A])
+                pos_A = event.state / 90
             elif event.code == "BTN_MODE":
                 global quitting
                 quitting = True
@@ -24,5 +23,8 @@ gamepad.start()
 
 while True:
     BrickPiUpdateValues()
+    print BrickPi.Encoder[PORT_A]
+    print pos_A
+    motorRotateDegree([255],[pos_A],[PORT_A])
     if quitting == True:
         sys.exit()
