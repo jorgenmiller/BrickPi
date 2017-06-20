@@ -14,7 +14,9 @@ def gamepad():
     while True:
         for event in get_gamepad():
             if event.code == "ABS_RX":
-                pos_A = event.state / 90
+                global pos_gamepad
+                pos_gamepad = event.state / 90
+                BrickPi.MotorSpeed[PORT_B] = event.state / 128
             elif event.code == "BTN_MODE":
                 global quitting
                 quitting = True
@@ -24,7 +26,7 @@ gamepad = threading.Thread(target = gamepad)
 gamepad.start()
 
 while True:
-    BrickPi.Encoder[PORT_A] = pos_gamepad
+    BrickPi.Encoder[PORT_A] = pos_A
     if pos_A > pos_gamepad + 10:
         BrickPi.MotorSpeed[PORT_A] = -50
         print "greater"
