@@ -26,7 +26,7 @@ gamepad.start()
 
 while True:
     BrickPi.Encoder[PORT_A] = pos_gamepad
-    if pos_A > pos_gameapd + 10:
+    if pos_A > pos_gamepad + 10:
         BrickPi.MotorSpeed[PORT_A] = -50
     elif pos_A < pos_gamepad - 10:
         BrickPi.MotorSpeed[PORT_A] = 50
