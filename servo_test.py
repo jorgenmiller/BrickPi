@@ -1,4 +1,6 @@
+from inputs import get_gamepad
 from BrickPi import *
+import threading
 
 BrickPiSetup()
 BrickPiSetupSensors()
