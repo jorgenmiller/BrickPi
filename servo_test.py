@@ -6,6 +6,7 @@ BrickPiSetup()
 BrickPiSetupSensors()
 BrickPi.MotorEnable[PORT_A] = 1
 quitting = False
+pos_A = "undefined"
 motorRotateDegree([255],[0],[PORT_A])
 
 def gamepad():
