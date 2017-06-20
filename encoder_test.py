@@ -1,7 +1,7 @@
 from BrickPi import *
 
 BrickPiSetup()
-
+BrickPiSetupSensors()
 BrickPi.MotorEnable[PORT_A] = 1
 
 while True:
