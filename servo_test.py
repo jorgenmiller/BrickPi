@@ -5,10 +5,10 @@ import threading
 BrickPiSetup()
 BrickPiSetupSensors()
 BrickPi.MotorEnable[PORT_A] = 1
+BrickPi.EncoderOffset[PORT_A] = BrickPi.Encoder[PORT_A]
 quitting = False
 pos_A = 0
 pos_gamepad = 0
-motorRotateDegree([255],[0],[PORT_A])
 
 def gamepad():
     while True:
@@ -16,7 +16,7 @@ def gamepad():
             if event.code == "ABS_RX":
                 global pos_gamepad
                 pos_gamepad = event.state / 90
-                BrickPi.MotorSpeed[PORT_B] = event.state / 128
+                print pos_gamepad
             elif event.code == "BTN_MODE":
                 global quitting
                 quitting = True
@@ -27,15 +27,6 @@ gamepad.start()
 
 while True:
     BrickPi.Encoder[PORT_A] = pos_A
-    if pos_A > pos_gamepad + 10:
-        BrickPi.MotorSpeed[PORT_A] = -50
-        print "greater"
-    elif pos_A < pos_gamepad - 10:
-        BrickPi.MotorSpeed[PORT_A] = 50
-        print "less"
-    for pos_A in range(pos_gamepad - 10, pos_gamepad + 10):
-        BrickPi.MotorSpeed[PORT_A] = 255
-        print "equal"
     BrickPiUpdateValues()
     if quitting == True:
         sys.exit()
