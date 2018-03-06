@@ -18,4 +18,4 @@ while True:
         previouslevel = soundlevel
     except KeyboardInterrupt:
         break
-    time.sleep(.1)
+    time.sleep(.5)
