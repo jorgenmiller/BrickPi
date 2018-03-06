@@ -13,7 +13,7 @@ while True:
         soundlevel = BrickPi.Sensor[PORT_1]
         if soundlevel <= previouslevel - 800:
             claps += 1
-        print soundlevel + "        " + claps
+        print str(soundlevel) + "        " + str(claps)
         previouslevel = soundlevel
     except KeyboardInterrupt:
         break
