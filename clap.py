@@ -5,7 +5,7 @@ BrickPi.SensorType[PORT_1] = TYPE_SENSOR_RAW #analog sound sensor
 BrickPiSetupSensors()
 
 claps = 0
-previous level = 1000
+previouslevel = 1000
 
 while True:
     try:
