@@ -1,3 +1,4 @@
+import time
 from BrickPi import *
 
 BrickPiSetup()
@@ -17,3 +18,4 @@ while True:
         previouslevel = soundlevel
     except KeyboardInterrupt:
         break
+    time.sleep(.1)
