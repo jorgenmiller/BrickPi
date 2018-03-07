@@ -32,8 +32,6 @@ while True:
         if currentpos == 20:
             currentpos = 0
 
-        print previouslevels
-
     except KeyboardInterrupt:
         break
     time.sleep(.1)
