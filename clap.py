@@ -38,4 +38,3 @@ while True:
 
     except KeyboardInterrupt:
         break
-    time.sleep(.2)
