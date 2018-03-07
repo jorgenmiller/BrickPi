@@ -10,6 +10,7 @@ def average(previouslevels):
     for level in previouslevels:
         sum += level
     average = sum / len(previouslevels)
+    return average
 
 claps = 0
 previouslevels = []
