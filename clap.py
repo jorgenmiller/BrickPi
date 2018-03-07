@@ -26,7 +26,7 @@ while True:
         currentlevel = BrickPi.Sensor[PORT_1]
         pastaverage = average(previouslevels)
 
-        if currentlevel <= pastaverage + 100:
+        if currentlevel <= pastaverage - 100:
             previouslevels[currentpos] = currentlevel
             currentpos += 1
             if currentpos == len(previouslevels):
