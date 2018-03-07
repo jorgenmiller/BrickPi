@@ -9,8 +9,8 @@ claps = 0
 previouslevels = []
 currentpos = 0
 
-#for i in range(20):
-#    previouslevels.append(1000)
+for i in range(20):
+    previouslevels.append(1000)
 
 while True:
     try:
