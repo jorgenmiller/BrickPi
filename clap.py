@@ -23,14 +23,18 @@ while True:
     try:
 
         BrickPiUpdateValues()
+        currentlevel = BrickPi.Sensor[PORT_1]
+        pastaverage = average(previouslevels)
 
-        previouslevels[currentpos] = BrickPi.Sensor[PORT_1]
+        if currentlevel <= pastaverage + 100:
+            previouslevels[currentpos] = currentlevel
+            currentpos += 1
+            if currentpos == 20:
+                currentpos = 0
+        else:
+            print "clap!"
 
-        print average(previouslevels)
-
-        currentpos += 1
-        if currentpos == 20:
-            currentpos = 0
+        print pastaverage
 
     except KeyboardInterrupt:
         break
