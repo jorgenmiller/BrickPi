@@ -16,7 +16,7 @@ claps = 0
 previouslevels = []
 currentpos = 0
 
-for i in range(20):
+for i in range(40):
     previouslevels.append(1000)
 
 while True:
@@ -26,7 +26,7 @@ while True:
         currentlevel = BrickPi.Sensor[PORT_1]
         pastaverage = average(previouslevels)
 
-        if currentlevel <= pastaverage - 100:
+        if currentlevel <= pastaverage - 400:
             previouslevels[currentpos] = currentlevel
             currentpos += 1
             if currentpos == len(previouslevels):
