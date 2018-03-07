@@ -17,7 +17,7 @@ while True:
         previouslevels[currentpos] = BrickPi.Sensor[PORT_1]
 
         currentpos += 1
-        if currentpos == 15:
+        if currentpos == 20:
             currentpos = 0
 
         print previouslevels
