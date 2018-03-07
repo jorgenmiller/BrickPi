@@ -14,6 +14,9 @@ while True:
         BrickPiUpdateValues()
         print BrickPi.Sensor[PORT_1]
         print good(BrickPi.Sensor[PORT_1])
+        print ( 1 - ( int(BrickPi.Sensor[PORT_1]) / 1000 ) )
 
     except KeyboardInterrupt:
         break
+
+    time.sleep(.1)
