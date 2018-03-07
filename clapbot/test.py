@@ -14,7 +14,7 @@ while True:
         BrickPiUpdateValues()
         print BrickPi.Sensor[PORT_1]
         print good(BrickPi.Sensor[PORT_1])
-        print float( 1 - float( float(BrickPi.Sensor[PORT_1]) / 1000 ) )
+        print ( 1 - ( float(BrickPi.Sensor[PORT_1]) / 1000 ) )
 
     except KeyboardInterrupt:
         break
