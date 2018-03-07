@@ -9,15 +9,12 @@ claps = 0
 previouslevels = []
 
 for i in range(15):
-    print i
+    previouslevels.append(1000)
+print previouslevels
+
 while True:
     try:
         BrickPiUpdateValues()
-        soundlevel = BrickPi.Sensor[PORT_1]
-        if soundlevel <= previouslevel - 800:
-            claps += 1
-        print str(soundlevel) + "        " + str(claps)
-        previouslevel = soundlevel
     except KeyboardInterrupt:
         break
     time.sleep(.1)
