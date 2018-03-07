@@ -16,7 +16,7 @@ claps = 0
 previouslevels = []
 currentpos = 0
 
-for i in range(20):
+for i in range(100):
     previouslevels.append(1000)
 
 while True:
@@ -29,7 +29,7 @@ while True:
         if currentlevel <= pastaverage + 100:
             previouslevels[currentpos] = currentlevel
             currentpos += 1
-            if currentpos == 20:
+            if currentpos == 100:
                 currentpos = 0
         else:
             print "clap!"
