@@ -34,8 +34,7 @@ while True:
         else:
             print "clap!"
 
-        print previouslevels
-        print str(pastaverage) + " - " + str(currentlevel)
+        print previouslevels, " ~ ", str(pastaverage), " - ", (currentlevel)
 
     except KeyboardInterrupt:
         break
