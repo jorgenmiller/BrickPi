@@ -6,7 +6,7 @@ BrickPi.SensorType[PORT_1] = TYPE_SENSOR_RAW #analog sound sensor
 BrickPiSetupSensors()
 
 def good(soundlevel):
-    return 1 - ( soundlevel / 1000 )
+    return ( 1 - ( soundlevel / 1000 ) )
 
 while True:
     try:
