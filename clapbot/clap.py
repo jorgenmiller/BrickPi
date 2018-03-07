@@ -12,6 +12,10 @@ def average(previouslevels):
     average = sum / len(previouslevels)
     return average
 
+
+
+def
+
 claps = 0
 previouslevels = []
 currentpos = 0
