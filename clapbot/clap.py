@@ -54,6 +54,7 @@ while True:
             sound_in_row += 1
 
         else:
+            previous_sound_levels[current_pos] = current_sound_level
             current_pos += 1
             if current_pos == len(previous_sound_levels):
                 current_pos = 0
