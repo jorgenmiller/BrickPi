@@ -45,7 +45,7 @@ while True:
         current_sound_level = checkSoundLevel()
         past_average = average(previous_sound_levels)
 
-        if zScore(current_sound_level, previous_sound_levels) >= 1:
+        if zScore(current_sound_level, previous_sound_levels) >= 3:
             if not sound_in_row == 0:
                 claps += 1
                 print "clap ", claps
