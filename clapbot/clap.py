@@ -33,7 +33,7 @@ def zScore(test_value, list):
 
 previous_sound_levels = []
 current_pos = 0
-
+sound_in_row = 0
 
 for i in range(40):
     previous_sound_levels.append(checkSoundLevel())
@@ -45,11 +45,15 @@ while True:
         past_average = average(previous_sound_levels)
 
         if zScore(current_sound_level, previous_sound_levels) >= 3:
-            print "clap!"
+            if not sound_in_row == 0:
+                print "clap!"
+            sound_in_row += 1
+
         else:
             current_pos += 1
             if current_pos == len(previous_sound_levels):
                 current_pos = 0
+            sound_in_row = 0
 
 #        print previous_sound_levels
 #        print str(past_average), " - ", (current_sound_level)
@@ -57,4 +61,4 @@ while True:
     except KeyboardInterrupt:
         break
 
-    time.sleep(.2)
+    time.sleep(.1)
