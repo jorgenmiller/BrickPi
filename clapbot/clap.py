@@ -35,17 +35,18 @@ previous_sound_levels = []
 current_pos = 0
 sound_in_row = 0
 claps = 0
+limit = int(input("z Score limit? : "))
 
-for i in range(40):
+for i in range(100):
     previous_sound_levels.append(checkSoundLevel())
-
+    time.sleep(.1)
 
 while True:
     try:
         current_sound_level = checkSoundLevel()
         past_average = average(previous_sound_levels)
 
-        if zScore(current_sound_level, previous_sound_levels) >= 2:
+        if zScore(current_sound_level, previous_sound_levels) >= limit:
             if sound_in_row == 0:
                 claps += 1
                 print "clap ", claps
