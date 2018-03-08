@@ -39,7 +39,8 @@ limit = int(input("z Score limit? : "))
 
 for i in range(100):
     previous_sound_levels.append(checkSoundLevel())
-    time.sleep(.1)
+    time.sleep(.05)
+print "go!"
 
 while True:
     try:
