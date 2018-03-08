@@ -47,6 +47,7 @@ while True:
 
         if zScore(current_sound_level, previous_sound_levels) >= 3:
             if not sound_in_row == 0:
+                claps += 1
                 print "clap ", claps
             sound_in_row += 1
 
