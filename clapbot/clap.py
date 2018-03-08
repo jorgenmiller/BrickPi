@@ -1,44 +1,59 @@
 import time
 from BrickPi import *
 
+
 BrickPiSetup()
 BrickPi.SensorType[PORT_1] = TYPE_SENSOR_RAW #analog sound sensor
 BrickPiSetupSensors()
 
-def average(previouslevels):
-    sum = 0
-    for level in previouslevels:
-        sum += level
-    average = sum / len(previouslevels)
+
+def checkSoundLevel():
+    BrickPiUpdateValues()
+    soundlevel = float(BrickPi.Sensor[PORT_1])
+    return 1 - ( soundlevel / 1000 )
+
+def average(list):
+    sum = float(0)
+    for n in list:
+        sum += n
+    average = (sum / len(list))
     return average
 
+def standardDeviation(list):
+    sum_deviation = 0
+    for n in list:
+        sum_deviation += ( n - average(list)) ** 2
+    standard_deviation = ( sum_deviation / len(list) ) ** .5
+    return standard_deviation
+
+def zScore(test_value, list):
+    z_score = (test_value - average(list)) / standardDeviation(list)
+    return z_score
 
 
-def
+previous_sound_levels = []
+current_pos = 0
 
-claps = 0
-previouslevels = []
-currentpos = 0
 
 for i in range(40):
-    previouslevels.append(1000)
+    previous_sound_levels.append(checkSoundLevel())
+
 
 while True:
     try:
+        current_sound_level = checkSoundLevel()
+        past_average = average(previousSoundLevels)
 
-        BrickPiUpdateValues()
-        currentlevel = BrickPi.Sensor[PORT_1]
-        pastaverage = average(previouslevels)
-
-        if currentlevel >= pastaverage - 400:
-            previouslevels[currentpos] = currentlevel
-            currentpos += 1
-            if currentpos == len(previouslevels):
-                currentpos = 0
-        else:
+        if zScore(current_sound_level, previous_sound_levels) >= 2:
             print "clap!"
+        else:
+            current_pos += 1
+            if current_pos == len(previous_sound_levels):
+                current_pos = 0
 
-        print previouslevels, " ~ ", str(pastaverage), " - ", (currentlevel)
+        print previous_sound_levels, " ~ ", str(past_average), " - ", (current_sound_level)
 
     except KeyboardInterrupt:
         break
+
+    time.sleep(.1)
