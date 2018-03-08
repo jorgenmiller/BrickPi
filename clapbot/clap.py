@@ -44,16 +44,17 @@ while True:
         current_sound_level = checkSoundLevel()
         past_average = average(previous_sound_levels)
 
-        if zScore(current_sound_level, previous_sound_levels) >= 2:
+        if zScore(current_sound_level, previous_sound_levels) >= 3:
             print "clap!"
         else:
             current_pos += 1
             if current_pos == len(previous_sound_levels):
                 current_pos = 0
 
-        print previous_sound_levels, " ~ ", str(past_average), " - ", (current_sound_level)
+#        print previous_sound_levels
+#        print str(past_average), " - ", (current_sound_level)
 
     except KeyboardInterrupt:
         break
 
-    time.sleep(.1)
+    time.sleep(.2)
