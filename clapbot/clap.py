@@ -42,7 +42,7 @@ for i in range(40):
 while True:
     try:
         current_sound_level = checkSoundLevel()
-        past_average = average(previousSoundLevels)
+        past_average = average(previous_sound_levels)
 
         if zScore(current_sound_level, previous_sound_levels) >= 2:
             print "clap!"
