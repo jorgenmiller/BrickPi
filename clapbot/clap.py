@@ -35,7 +35,7 @@ previous_sound_levels = []
 current_pos = 0
 sound_in_row = 0
 claps = 0
-limit = int(input("z Score limit? : "))
+limit = float(input("z Score limit? : "))
 
 for i in range(100):
     previous_sound_levels.append(checkSoundLevel())
