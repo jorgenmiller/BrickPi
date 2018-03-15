@@ -19,25 +19,13 @@ def average(list):
     average = (sum / len(list))
     return average
 
-def standardDeviation(list):
-    sum_deviation = 0
-    for n in list:
-        sum_deviation += ( n - average(list)) ** 2
-    standard_deviation = ( sum_deviation / len(list) ) ** .5
-    return standard_deviation
-
-def zScore(test_value, list):
-    z_score = (test_value - average(list)) / standardDeviation(list)
-    return z_score
-
 
 previous_sound_levels = []
 current_pos = 0
 sound_in_row = 0
 claps = 0
-limit = float(input("z Score limit? : "))
 
-for i in range(100):
+for i in range(50):
     previous_sound_levels.append(checkSoundLevel())
     time.sleep(.05)
 print "go!"
@@ -47,7 +35,7 @@ while True:
         current_sound_level = checkSoundLevel()
         past_average = average(previous_sound_levels)
 
-        if zScore(current_sound_level, previous_sound_levels) >= limit:
+        if current_sound_level => ( 1 + past_average ) / 2 #halfway between past_average and 1 (loudest)
             if sound_in_row == 0:
                 claps += 1
                 print "clap ", claps
