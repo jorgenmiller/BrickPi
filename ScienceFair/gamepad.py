@@ -17,7 +17,7 @@ BrickPi.EncoderOffset[PORT_C] = BrickPi.Encoder[PORT_C]
 BrickPi.MotorEnable[PORT_D] = 1
 BrickPi.EncoderOffset[PORT_D] = BrickPi.Encoder[PORT_D]
 
-speed = 100
+speed = 255
 
 
 def thread():

@@ -33,6 +33,7 @@ while True:
         else:
             BrickPi.MotorSpeed[PORT_A] = 0
             print("stay")
+3
 
         while position < goto - 30 or position > goto + 30:
             print("again")
