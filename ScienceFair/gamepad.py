@@ -38,11 +38,11 @@ while True:
             BrickPi.MotorSpeed[PORT_D] = 25
         elif txt == "8":
             BrickPi.MotorSpeed[PORT_D] = -25
-        else:
-            BrickPi.MotorSpeed[PORT_A] = 0
-            BrickPi.MotorSpeed[PORT_B] = 0
-            BrickPi.MotorSpeed[PORT_C] = 0
-            BrickPi.MotorSpeed[PORT_D] = 0
+        #else:
+        #    BrickPi.MotorSpeed[PORT_A] = 0
+        #    BrickPi.MotorSpeed[PORT_B] = 0
+        #    BrickPi.MotorSpeed[PORT_C] = 0
+        #    BrickPi.MotorSpeed[PORT_D] = 0
 
 
     except KeyboardInterrupt:
