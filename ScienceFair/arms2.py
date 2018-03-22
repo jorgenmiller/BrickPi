@@ -1,6 +1,5 @@
-import threading
-from BrickPi import *
 import time
+from BrickPi import *
 
 BrickPiSetup()
 BrickPiSetupSensors()
@@ -17,24 +16,15 @@ BrickPi.EncoderOffset[PORT_C] = BrickPi.Encoder[PORT_C]
 BrickPi.MotorEnable[PORT_D] = 1
 BrickPi.EncoderOffset[PORT_D] = BrickPi.Encoder[PORT_D]
 
-speed = 100
-
-
-def thread():
-    while True:
-        try:
-            BrickPiUpdateValues()
-        except KeyboardInterrupt:
-            break
-        time.sleep(.1)
-
-thread = threading.Thread(target = thread)
-thread.daemon = True
-thread.start()
+speed = 255
 
 while True:
     try:
-
+        BrickPi.MotorSpeed[PORT_A] = 0
+        BrickPi.MotorSpeed[PORT_B] = 0
+        BrickPi.MotorSpeed[PORT_C] = 0
+        BrickPi.MotorSpeed[PORT_D] = 0
+        BrickPiUpdateValues()
         txt = input("input: ")
 
         if txt == "1":
@@ -53,12 +43,10 @@ while True:
             BrickPi.MotorSpeed[PORT_D] = speed
         elif txt == "8":
             BrickPi.MotorSpeed[PORT_D] = -1 * speed
-        else:
-            BrickPi.MotorSpeed[PORT_A] = 0
-            BrickPi.MotorSpeed[PORT_B] = 0
-            BrickPi.MotorSpeed[PORT_C] = 0
-            BrickPi.MotorSpeed[PORT_D] = 0
+
+        BrickPiUpdateValues()
 
     except KeyboardInterrupt:
         break
-    time.sleep(.1)
+
+    time.sleep(1)
