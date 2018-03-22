@@ -38,9 +38,9 @@ while True:
         txt = input("input: ")
 
         if txt == "1":
-            BrickPi.MotorSpeed[PORT_A] = speed
+            BrickPi.MotorSpeed[PORT_A] = 50
         elif txt == "2":
-            BrickPi.MotorSpeed[PORT_A] = -1 * speed
+            BrickPi.MotorSpeed[PORT_A] = -50
         elif txt == "3":
             BrickPi.MotorSpeed[PORT_B] = speed
         elif txt == "4":
