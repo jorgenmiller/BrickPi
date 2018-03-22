@@ -18,8 +18,10 @@ BrickPi.EncoderOffset[PORT_D] = BrickPi.Encoder[PORT_D]
 
 while True:
     try:
+        BrickPiUpdateValues
         goto = int(input("pos? 0-360: "))
         position = BrickPi.Encoder[PORT_A]
+        print BrickPi.Encoder[PORT_A]
         print("got it")
 
         if goto > position:
@@ -35,6 +37,7 @@ while True:
         while position < goto - 30 or position > goto + 30:
             print("again")
             BrickPiUpdateValues()
+            print BrickPi.Encoder[PORT_A]
         BrickPi.MotorSpeed[PORT_A] = 0
         BrickPiUpdateValues()
         print("finished")
