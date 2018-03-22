@@ -17,7 +17,8 @@ BrickPi.EncoderOffset[PORT_C] = BrickPi.Encoder[PORT_C]
 BrickPi.MotorEnable[PORT_D] = 1
 BrickPi.EncoderOffset[PORT_D] = BrickPi.Encoder[PORT_D]
 
-speed = 255
+
+speed = int(input("speed?"))
 
 
 def thread():
@@ -38,9 +39,9 @@ while True:
         txt = input("input: ")
 
         if txt == "1":
-            BrickPi.MotorSpeed[PORT_A] = 50
+            BrickPi.MotorSpeed[PORT_A] = speed
         elif txt == "2":
-            BrickPi.MotorSpeed[PORT_A] = -50
+            BrickPi.MotorSpeed[PORT_A] = -1 * speed
         elif txt == "3":
             BrickPi.MotorSpeed[PORT_B] = speed
         elif txt == "4":
