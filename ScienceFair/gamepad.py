@@ -16,27 +16,29 @@ BrickPi.EncoderOffset[PORT_C] = BrickPi.Encoder[PORT_C]
 BrickPi.MotorEnable[PORT_D] = 1
 BrickPi.EncoderOffset[PORT_D] = BrickPi.Encoder[PORT_D]
 
+speed = 200
+
 while True:
     try:
 
         txt = input("input: ")
 
         if txt == "1":
-            BrickPi.MotorSpeed[PORT_A] = 25
+            BrickPi.MotorSpeed[PORT_A] = speed
         elif txt == "2":
-            BrickPi.MotorSpeed[PORT_A] = -25
+            BrickPi.MotorSpeed[PORT_A] = -1 * speed
         elif txt == "3":
-            BrickPi.MotorSpeed[PORT_B] = 25
+            BrickPi.MotorSpeed[PORT_B] = speed
         elif txt == "4":
-            BrickPi.MotorSpeed[PORT_B] = -25
+            BrickPi.MotorSpeed[PORT_B] = -1 * speed
         elif txt == "5":
-            BrickPi.MotorSpeed[PORT_C] = 25
+            BrickPi.MotorSpeed[PORT_C] = speed
         elif txt == "6":
-            BrickPi.MotorSpeed[PORT_C] = -25
+            BrickPi.MotorSpeed[PORT_C] = -1 * speed
         elif txt == "7":
-            BrickPi.MotorSpeed[PORT_D] = 25
+            BrickPi.MotorSpeed[PORT_D] = speed
         elif txt == "8":
-            BrickPi.MotorSpeed[PORT_D] = -25
+            BrickPi.MotorSpeed[PORT_D] = -1 * speed
         else:
             BrickPi.MotorSpeed[PORT_A] = 0
             BrickPi.MotorSpeed[PORT_B] = 0
