@@ -22,21 +22,21 @@ while True:
 
         txt = input("input: ")
 
-        if txt = "1":
+        if txt == "1":
             BrickPi.MotorSpeed[PORT_A] = 25
-        elif txt = "2":
+        elif txt == "2":
             BrickPi.MotorSpeed[PORT_A] = -25
-        elif txt = "3":
+        elif txt == "3":
             BrickPi.MotorSpeed[PORT_B] = 25
-        elif txt = "4":
+        elif txt == "4":
             BrickPi.MotorSpeed[PORT_B] = -25
-        elif txt = "5":
+        elif txt == "5":
             BrickPi.MotorSpeed[PORT_C] = 25
-        elif txt = "6":
+        elif txt == "6":
             BrickPi.MotorSpeed[PORT_C] = -25
-        elif txt = "7":
+        elif txt == "7":
             BrickPi.MotorSpeed[PORT_D] = 25
-        elif txt = "8":
+        elif txt == "8":
             BrickPi.MotorSpeed[PORT_D] = -25
         else:
             BrickPi.MotorSpeed[PORT_A] = 0
