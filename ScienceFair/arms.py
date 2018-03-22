@@ -18,7 +18,7 @@ BrickPi.EncoderOffset[PORT_D] = BrickPi.Encoder[PORT_D]
 
 while True:
     try:
-        goto = input("pos? 0-360: ")
+        goto = int(input("pos? 0-360: "))
         position = BrickPi.Encoder[PORT_A]
         print("got it")
 
