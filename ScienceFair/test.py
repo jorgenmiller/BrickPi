@@ -18,7 +18,7 @@ BrickPi.EncoderOffset[PORT_D] = BrickPi.Encoder[PORT_D]
 
 while True:
     try:
-        BrickPiUpdateValues()
+        BrickPiUpdateValues
 
         txt = input("input: ")
 
