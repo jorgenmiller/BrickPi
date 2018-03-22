@@ -25,10 +25,10 @@ while True:
         print("got it")
 
         if goto > position:
-            BrickPi.MotorSpeed[PORT_A] = 50
+            BrickPi.MotorSpeed[PORT_A] = -50
             print("up")
         elif goto < position:
-            BrickPi.MotorSpeed[PORT_A] = -50
+            BrickPi.MotorSpeed[PORT_A] = 50
             print("down")
         else:
             BrickPi.MotorSpeed[PORT_A] = 0
